@@ -25,7 +25,7 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditInstanceOnly, Category = "PatrolRoute")
+	UPROPERTY(EditAnywhere, Category = "PatrolRoute")
 		TArray<AActor*> PatrolPointsCPP;
 
 public:	
