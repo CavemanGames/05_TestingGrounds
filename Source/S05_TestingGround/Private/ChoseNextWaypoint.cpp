@@ -13,10 +13,18 @@ EBTNodeResult::Type UChoseNextWaypoint::ExecuteTask(UBehaviorTreeComponent& Owne
 	
 	// Get the Patrol Points
 	UPatrolRoute* PatrolRoute = OwnerComp.GetAIOwner()->GetPawn()->FindComponentByClass<UPatrolRoute>();
-	if (!ensure(PatrolRoute)) { return EBTNodeResult::Failed; }
+	
+	if (!ensure(PatrolRoute)) 
+	{ 
+		return EBTNodeResult::Failed; 
+	}
 
 	PatrolPoints = PatrolRoute->GetPatrolPointsCPP();
-	if (ensure(PatrolPoints.Num() <= 0)) { return EBTNodeResult::Failed; }
+	
+	if (ensure(PatrolPoints.Num() <= 0)) 
+	{ 
+		return EBTNodeResult::Failed; 
+	}
 
 	// Set Next WayPoint
 	UBlackboardComponent* BlackboardComp = OwnerComp.GetBlackboardComponent();
