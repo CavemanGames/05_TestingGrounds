@@ -21,7 +21,7 @@ EBTNodeResult::Type UChoseNextWaypoint::ExecuteTask(UBehaviorTreeComponent& Owne
 
 	PatrolPoints = PatrolRoute->GetPatrolPointsCPP();
 	
-	if (ensure(PatrolPoints.Num() <= 0)) 
+	if (!ensure(PatrolPoints.Num() > 0)) 
 	{ 
 		return EBTNodeResult::Failed; 
 	}
