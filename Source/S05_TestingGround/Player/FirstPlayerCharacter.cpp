@@ -105,6 +105,19 @@ void AFirstPlayerCharacter::BeginPlay()
 		Mesh1P->SetHiddenInGame(false, true);
 	}
 }
+/*
+void AFirstPlayerCharacter::ApplyDamageMomentum(float DamageTaken, FDamageEvent const & DamageEvent, APawn * PawnInstigator, AActor * DamageCauser)
+{
+	Super::ApplyDamageMomentum(DamageTaken, DamageEvent, PawnInstigator, DamageCauser);
+
+	Health = Health - DamageTaken;
+	UE_LOG(LogTemp, Warning, TEXT("Health: %f"), Health);
+
+	if (Health <= 0.0f)
+	{
+		DetachFromControllerPendingDestroy();
+	}
+}//*/
 
 //////////////////////////////////////////////////////////////////////////
 // Input

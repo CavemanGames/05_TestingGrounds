@@ -49,6 +49,11 @@ public:
 
 protected:
 	virtual void BeginPlay();
+	
+	//virtual void ApplyDamageMomentum(float DamageTaken, FDamageEvent const& DamageEvent, APawn* PawnInstigator, AActor* DamageCauser) override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Health")
+		float Health = 100.0f;
 
 public:
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
