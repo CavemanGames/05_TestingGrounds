@@ -46,7 +46,7 @@ AFirstPlayerCharacter::AFirstPlayerCharacter()
 
 	// Note: The ProjectileClass and the skeletal mesh/anim blueprints for Mesh1P, FP_Gun, and VR_Gun 
 	// are set in the derived blueprint asset named MyCharacter to avoid direct content references in C++.
-
+	/*
 	// Create VR Controllers.
 	R_MotionController = CreateDefaultSubobject<UMotionControllerComponent>(TEXT("R_MotionController"));
 	R_MotionController->Hand = EControllerHand::Right;
@@ -71,7 +71,7 @@ AFirstPlayerCharacter::AFirstPlayerCharacter()
 																				// Uncomment the following line to turn motion controllers on by default:
 																				//bUsingMotionControllers = true;
 																				//Attach gun mesh component to Skeleton, doing it here because the skeleton is not yet created in the constructor
-
+	*/
 }
 
 void AFirstPlayerCharacter::BeginPlay()
@@ -92,7 +92,7 @@ void AFirstPlayerCharacter::BeginPlay()
 	{
 		InputComponent->BindAction("Fire", IE_Pressed, Gun, &AGun::OnFire);
 	}
-
+	/*
 	// Show or hide the two versions of the gun based on whether or not we're using motion controllers.
 	if (bUsingMotionControllers)
 	{
@@ -103,7 +103,7 @@ void AFirstPlayerCharacter::BeginPlay()
 	{
 		VR_Gun->SetHiddenInGame(true, true);
 		Mesh1P->SetHiddenInGame(false, true);
-	}
+	}*/
 }
 /*
 void AFirstPlayerCharacter::ApplyDamageMomentum(float DamageTaken, FDamageEvent const & DamageEvent, APawn * PawnInstigator, AActor * DamageCauser)
@@ -132,7 +132,7 @@ void AFirstPlayerCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 
 	//InputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AFirstPlayerCharacter::TouchStarted);
 	
-	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AFirstPlayerCharacter::OnResetVR);
+	//PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AFirstPlayerCharacter::OnResetVR);
 
 	PlayerInputComponent->BindAxis("MoveForward", this, &AFirstPlayerCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &AFirstPlayerCharacter::MoveRight);
